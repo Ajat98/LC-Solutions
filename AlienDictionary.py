@@ -18,4 +18,4 @@ class Solution:
                 elif i == len(words_values[1]) - 1:
                     return False
                 
-            return True
+        return True
