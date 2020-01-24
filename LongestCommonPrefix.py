@@ -7,18 +7,16 @@ Assume all given inputs are in lowercase letters a-z.
 
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
+        #for empty list
+        if not strs: 
+            return "" 
         
-        if not strs:
-            return ''
-            
-        #upper bound of longest common prefix will shortest string in strs
-        smallest = min(strs, key=len) 
-        
-        for i, char in enumerate(smallest): 
-            #Upper bound of
-            for k in strs:
-                if k[i] != char:
+        #shortest str in list will be used as largest possible prefix
+        smallest = min(strs, key=len)
+
+        for i, char in enumerate(smallest):
+            for c in strs:
+                if c[i] != char:
                     return smallest[:i]
         return smallest
-            
                        
