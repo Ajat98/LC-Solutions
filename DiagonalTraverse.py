@@ -37,3 +37,38 @@ class Solution:
             else:
                 out += lines[k]
         return out
+       
+#Solution without imports
+        if len(matrix) == 0: return []
+        
+        m = len(matrix)
+        n = len(matrix[0])
+        row = 0
+        col = 0
+    
+        out = list()
+        i = 0
+        while i < (m*n):
+            out.append(matrix[row][col])
+            if (row + col)%2 == 0:
+                #upwards traversal
+                if col == n-1:
+                    row +=1
+                elif row == 0:
+                    col +=1
+                else:
+                    row -=1
+                    col +=1
+            else:
+                #downwards traversal
+                if row == m-1:
+                    col +=1
+                elif col ==0:
+                    row +=1
+                else:
+                    row +=1
+                    col -=1
+                    
+            i += 1
+            
+        return out
