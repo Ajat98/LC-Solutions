@@ -14,4 +14,18 @@ class Solution:
          
         
         return list(set(range(1, len(nums)+1)) - set(nums))
+    
+    
+        #Alternate solution
+        
+        empty = [0]*(len(nums)+1)
+        for i in range(len(nums)):
+            empty[nums[i]] = 1
+        
+        result = []
+        for i in range(1, len(nums)+1):
+            if empty[i] == 0:
+                result.append(i)
+                
+        return result
         
