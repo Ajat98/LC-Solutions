@@ -15,10 +15,13 @@ Minimize the total number of operations.
 class Solution:
     def moveZeroes(self, nums: List[int]) -> None:
         """
-        Do not return anything, modify nums in-place instead.
+        Do not return anything, modify nums in-place instead. 
         """
-        for i in range(len(nums)):
-            if nums[i] == 0:
+        
+        for i in nums:
+            if i == 0:
                 nums.remove(0)
                 nums.append(0)
+        return nums
+       
         
