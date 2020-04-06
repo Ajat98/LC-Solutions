@@ -19,16 +19,17 @@ class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         
         d = {}
-        for i in strs:
-            k = "".join(sorted(i))
+        for word in strs:
+            k = "".join(sorted(word))
+            
+            #Word must be inserted as a list
             if k not in d:
-                d[k] = [i]
+                d[k] = [word]
             else:
-                d[k] += [i]
+                d[k] += [word]
         
         res = []
         for j in d.keys():
             res.append(d[j])
-        
         return res
         
